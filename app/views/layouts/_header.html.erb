@@ -1,9 +1,9 @@
 <header>
-	<h1><a href="#">Let's Shaffle!</a></h1>
+	<%= link_to "Let's Shaffle!", root_path, id:"logo" %>
 	<nav>
 		<ul>
 			<li><%= link_to "生徒登録", students_new_path %></li>
-			<li><a href="#">生徒一覧</a></li>
+			<li><%= link_to "生徒一覧", students_path %></li>
 			<li><a href="#">ログアウト</a></li>
 		</ul>
 	</nav>

@@ -32,16 +32,15 @@ header{
 	display: flex;
 	background-color: black;
 	align-items: center;
-	h1{
+	#logo{
+		display: block;
 		width: 25%;
 		margin: auto;
 		font-size: 3vh;
 		text-align: center;
-		a{
-			color: white;
-			&:hover{
-				text-decoration: none;
-			}
+		color: white;
+		&:hover{
+			text-decoration: none;
 		}
 	}
 	nav{
