@@ -2,24 +2,66 @@
 
 <div class="container">
 	<%= form_with(model: @student, local:true) do |f| %>
-		<%= f.label :last_name, "姓" %>
-		<%= f.text_field :last_name %>
+	<%= render 'shared/error_messages' %>
 
-		<%= f.label :first_name, "名" %>
-		<%= f.text_field :first_name %>
-		
-		<%= f.label :sex, "性別" %>
-		<%= f.radio_button :sex, "man" %>男 <%= f.radio_button :sex, "woman" %>女
-		
-		<%= f.label :school_year, "学年" %>
-		<%= f.number_field :school_year, min:1, max:6 %>
-		
-		<%= f.label :class_num, "クラス" %>
-		<%= f.number_field :class_num, min:1, max:10 %>
-		
-		<%= f.label :attendance_number, "出席番号" %>
-		<%= f.number_field :attendance_number, min:1, max:50 %>
+	<table>
+		<tr>
+			<td>
+				<%= f.label :last_name, "姓" %>
+			</td>
+			<td>
+				<%= f.text_field :last_name, class:'' %>
+			</td>
+			<td>
+				<%= f.label :first_name, "名" %>
+			</td>
+			<td>
+				<%= f.text_field :first_name, class:'' %>
+			</td>
+		</tr>
 
-		<%= f.submit "登録", class:"btn" %>
+		<tr>
+			<div class="form-check">
+				<td>
+					<%= f.label :sex, "性別" %>
+				</td>
+				<td>
+					<%= f.radio_button :sex, "男",checked: true, class:'form-check-input' %>男
+				</td>
+				<td>
+					<%= f.radio_button :sex, "女", class:'form-check-input' %>女
+				</td>
+			</div>
+		</tr>
+
+		<tr>
+			<td>
+				<%= f.label :school_year, "学年" %>
+			</td>
+			<td>
+				<%= f.number_field :school_year, min:1, max:6, class:'' %>
+			</td>
+			<td>
+				<%= f.label :class_num, "クラス" %>
+			</td>
+			<td>
+				<%= f.number_field :class_num, min:1, max:10, class:'' %>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :attendance_number, "出席番号" %>
+			</td>
+			<td>
+				<%= f.number_field :attendance_number, min:1, max:50, class:'' %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.submit "登録", class:"btn" %>
+			</td>
+		</tr>
+	</table>
 	<% end %>
 </div>

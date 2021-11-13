@@ -1,0 +1,61 @@
+<h1>生徒の情報</h1>
+
+<div class="container">
+	<table>
+		<tr>
+			<td>
+				<label for="">姓</label>
+			</td>
+			<td>
+				<%= @student.last_name %>
+			</td>
+			<td>
+				<label for="">名</label>
+			</td>
+			<td>
+				<%= @student.first_name %>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label for="">性別</label>
+			</td>
+			<td>
+				<%= @student.sex %>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label for="">学年</label>
+			</td>
+			<td>
+				<%= @student.school_year %>
+			</td>
+			<td>
+				<label for="">クラス</label>
+			</td>
+			<td>
+				<%= @student.class_num %>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<label for="">出席番号</label>
+			</td>
+			<td>
+				<%= @student.attendance_number %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="">座席番号</label>
+			</td>
+			<td>
+				<%= @student.seats_number %>
+			</td>
+		</tr>
+	</table>
+</div>
