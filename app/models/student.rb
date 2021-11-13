@@ -5,5 +5,5 @@ class Student < ApplicationRecord
 	validates :school_year, presence: true, numericality: {less_than: 7}
 	validates :class_num, presence: true, numericality: {less_than: 11}
 	validates :attendance_number, presence: true, numericality: {less_than: 51}
-	validates :seats_number, numericality: {less_than: 51}
+	# validates :seats_number, numericality: {less_than: 51},exclusion: { in:[nil]}
 end

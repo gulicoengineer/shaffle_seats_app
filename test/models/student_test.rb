@@ -43,11 +43,6 @@ class StudentTest < ActiveSupport::TestCase
     assert_not @student.valid?
   end
 
-  test "seats_num should be present" do
-    @student.seats_number = " "
-    assert_not @student.valid?
-  end
-
   # 長さチェック
   test "last_name should be too long" do
     @student.last_name = "a" * 26
@@ -79,9 +74,9 @@ class StudentTest < ActiveSupport::TestCase
     assert_not @student.valid?
   end
   
-  test "seats_number should be too large" do
-    @student.seats_number = 51
-    assert_not @student.valid?
-  end
+  # test "seats_number should be too large" do
+    # @student.seats_number = 51
+    # assert_not @student.valid?
+  # end
   
 end
