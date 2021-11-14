@@ -5,7 +5,7 @@
 			<option value="3-2">3-2</option>
 			<option value="3-3">3-3</option>
 		</select>
-		<p class="btn"><a href="#">シャッフル</a></p>
+		<p class="btn" id="shaffle-button" ontouchstart="">シャッフル</p>
 		<p class="btn"><a href="#">保存</a></p>
 	</div>
 </section>
@@ -15,83 +15,32 @@
 		<p>教卓</p>
 	</div>
 	<div class="student-desks">
-		<table>
-			<tr>
-				<td><a href="#">生徒1</a></td>
-				<td><a href="#">生徒2</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒3</a></td>
-				<td><a href="#">生徒4</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒5</a></td>
-				<td><a href="#">生徒6</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒7</a></td>
-				<td><a href="#">生徒8</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒9</a></td>
-				<td><a href="#">生徒10</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒11</a></td>
-				<td><a href="#">生徒12</a></td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td><a href="#">生徒1</a></td>
-				<td><a href="#">生徒2</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒3</a></td>
-				<td><a href="#">生徒4</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒5</a></td>
-				<td><a href="#">生徒6</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒7</a></td>
-				<td><a href="#">生徒8</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒9</a></td>
-				<td><a href="#">生徒10</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒11</a></td>
-				<td><a href="#">生徒12</a></td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td><a href="#">生徒1</a></td>
-				<td><a href="#">生徒2</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒3</a></td>
-				<td><a href="#">生徒4</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒5</a></td>
-				<td><a href="#">生徒6</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒7</a></td>
-				<td><a href="#">生徒8</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒9</a></td>
-				<td><a href="#">生徒10</a></td>
-			</tr>
-			<tr>
-				<td><a href="#">生徒11</a></td>
-				<td><a href="#">生徒12</a></td>
-			</tr>
-		</table>
+		<% @students.each_with_index do |student, i| %>
+			<%# <table>生成 %>
+			<% if i % @table_line_standard_num == 0 %>
+			<table>
+			<% end %>
+
+				<%# <tr>生成 %>
+				<% if i % 2 == 0 %>
+				<tr>
+				<% end %>
+
+					<%# <td>生成 %>
+					<td><%= link_to student.last_name, student %></td>
+
+				<%# </tr>生成 %>
+				<% if i % 2 == 1 %>
+				</tr>
+				<% end %>
+
+			<%# </table>タグ生成 %>
+			<% if i % @table_line_standard_num == @table_line_standard_num - 1 %>
+			</table>
+			<% end %>
+
+		<% end %>
 	</div>
 </section>
+
+<%= javascript_pack_tag 'main/main' %>
