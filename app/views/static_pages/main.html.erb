@@ -27,7 +27,7 @@
 				<% end %>
 
 					<%# <td>生成 %>
-					<td><%= link_to student.last_name, student %></td>
+					<td><%= link_to student.last_name, student, id: i , style: gender_color(student.sex) %></td>
 
 				<%# </tr>生成 %>
 				<% if i % 2 == 1 %>

@@ -16,7 +16,7 @@
 				<th scope="row"><%= student.attendance_number %></th>
 				<td><%= "#{student.school_year} - #{student.class_num}" %></td>
 				<td><%= link_to "#{student.last_name} #{student.first_name}", student, class:"student-name" %></td>
-				<td><%= student.sex %></td>
+				<td><font color=<%=gender_color(student.sex) %> ><%= student.sex %></font></td>
 			</tr>
 			<% end %>
 		</tbody>
