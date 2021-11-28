@@ -1,5 +1,16 @@
+let students = gon.students;
+
+// シャッフル関数
+const shuffle = ([...array]) => {
+	for (let i = array.length - 1; i >= 0; i--) {
+	  const j = Math.floor(Math.random() * (i + 1));
+	  [array[i], array[j]] = [array[j], array[i]];
+	}
+	return array;
+  }
+
+// シャッフルボタンを押したとき
 document.getElementById("shaffle-button").onclick = function() {
-	let students = gon.students;
 	students = shuffle(students);
 	students.forEach(function(student, index){
 		let target = document.getElementById(index);
@@ -16,11 +27,3 @@ document.getElementById("shaffle-button").onclick = function() {
 
 	});
 }
-
-const shuffle = ([...array]) => {
-	for (let i = array.length - 1; i >= 0; i--) {
-	  const j = Math.floor(Math.random() * (i + 1));
-	  [array[i], array[j]] = [array[j], array[i]];
-	}
-	return array;
-  }

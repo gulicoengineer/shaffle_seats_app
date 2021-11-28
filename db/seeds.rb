@@ -8,5 +8,5 @@
 		"女"
 	end
 	Student.create!(last_name: l_name, first_name: f_name, sex: sex,
-	school_year: 1, class_num: 1, attendance_number: n)
+	school_year: 1, class_num: 1, attendance_number: n + 1, seats_num: n)
 end
