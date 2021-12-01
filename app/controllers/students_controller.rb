@@ -33,8 +33,25 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  # 座席番号を保存
   def save_seats_order
+    students = params[:_json]
+    students.sort_by!{|a| a[:id]}
+    classmates = Student.where("school_year = ? AND class_num = ?",
+      students.first[:school_year], students.first[:class_num]).order(:id)
+    students.each_with_index {|student, index|
+      if classmates[index].update(seats_number: student[:seats_number])
+      else
+        render body: nil, status: 201
+      end
+
+    }
+
+
+      render body: nil, status: 200
+    # debugger
     
+
   end
 
 	private
